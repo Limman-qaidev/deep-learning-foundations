@@ -172,21 +172,25 @@ A layer takes activations from the previous layer, applies a linear map (weights
 <p style="text-align:center"><img src="./sources/forward_prop.png" alt="forward propagation schema."></p>
 
 - **Hidden layer (size $n_h$)**
+
 $$
 \begin{aligned}
 Z^{[1]} &= W^{[1]}X + b^{[1]},\\
 A^{[1]} &= g\!\big(Z^{[1]}\big),
 \end{aligned}
 $$
+
 where $X\in\mathbb{R}^{n_x\times m}$ has $m$ examples by columns, $W^{[1]}\in\mathbb{R}^{n_h\times n_x}$, and $b^{[1]}\in\mathbb{R}^{n_h\times 1}$ (broadcast across columns).
 
 - **Output layer (binary output)**
+
 $$
 \begin{aligned}
 Z^{[2]} &= W^{[2]}A^{[1]} + b^{[2]},\\
 \hat Y \;=\; A^{[2]} &= \sigma\!\big(Z^{[2]}\big),
 \end{aligned}
 $$
+
 with $W^{[2]}\in\mathbb{R}^{1\times n_h}$, $b^{[2]}\in\mathbb{R}^{1\times 1}$, and $\hat Y\in\mathbb{R}^{1\times m}$.
 
 This is the **forward propagation** for the concrete case we care about.
